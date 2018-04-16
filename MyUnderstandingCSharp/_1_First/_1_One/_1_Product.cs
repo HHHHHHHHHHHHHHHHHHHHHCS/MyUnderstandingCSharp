@@ -123,7 +123,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// 同时提供内部构造函数 方便内部创造使用
     /// 列表比之前更简洁了
     /// </summary>
-    public class _1_Product
+    /*public class _1_Product
     {
         public string Name
         {
@@ -162,6 +162,49 @@ namespace MyUnderstandingCSharp._1_First._1_One
         public override string ToString()
         {
             return string.Format("{0} : {1}", Name, Price);
+        }
+    }*/
+    #endregion
+
+    #region C# .Net4
+    /// <summary>
+    /// readonly 加入这个关键字能确保变量不被改变
+    /// 创建类的时候 显示变量的名称 为了更加清晰方便可以调节顺序
+    /// </summary>
+    public class _1_Product
+    {
+        readonly string name;
+        public string Name
+        {
+            get { return name; }
+        }
+
+        readonly decimal price;
+        public decimal Price
+        {
+            get { return price; }
+        }
+
+        public _1_Product(string name, decimal price)
+        {
+            this.name = name;
+            this.price = price;
+        }
+
+        public static List<_1_Product> GetSampleProducts()
+        {
+            return new List<_1_Product>()
+            {
+                new _1_Product(name: "West Side Story",price: 9.99m)
+                ,new _1_Product(name:"Assassins",price: 14.99m)
+                ,new _1_Product(name:"Froga", price:13.99m)
+                ,new _1_Product( price:10.99m,name:"Sweeney Todd")
+            };
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0} : {1}", name, price);
         }
     }
     #endregion
