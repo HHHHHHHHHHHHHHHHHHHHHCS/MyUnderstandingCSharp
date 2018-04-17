@@ -1,1 +1,6 @@
+E:\MyCSharp\MyUnderstandingCSharp\MyUnderstandingCSharp\obj\Debug\MyUnderstandingCSharp.csprojResolveAssemblyReference.cache
 E:\MyCSharp\MyUnderstandingCSharp\MyUnderstandingCSharp\bin\Debug\MyUnderstandingCSharp.exe.config
+E:\MyCSharp\MyUnderstandingCSharp\MyUnderstandingCSharp\bin\Debug\MyUnderstandingCSharp.exe
+E:\MyCSharp\MyUnderstandingCSharp\MyUnderstandingCSharp\bin\Debug\MyUnderstandingCSharp.pdb
+E:\MyCSharp\MyUnderstandingCSharp\MyUnderstandingCSharp\obj\Debug\MyUnderstandingCSharp.exe
+E:\MyCSharp\MyUnderstandingCSharp\MyUnderstandingCSharp\obj\Debug\MyUnderstandingCSharp.pdb
