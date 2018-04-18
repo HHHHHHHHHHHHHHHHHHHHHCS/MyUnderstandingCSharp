@@ -87,9 +87,9 @@ namespace MyUnderstandingCSharp._1_First._1_One
     }*/
     #endregion
 
-    #region C# .Net3-Lamda
+    #region C# .Net3-Lambda
     /// <summary>
-    /// C# 使用了Lamda 更简洁
+    /// C# 使用了Lambda 更简洁
     /// </summary>
     /*public class _2_SortArray
     {
