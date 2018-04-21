@@ -1,4 +1,5 @@
 ﻿using MyUnderstandingCSharp._1_First._1_One;
+using MyUnderstandingCSharp._1_First._2_Two;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,12 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _6_LinqProduct a = new _6_LinqProduct();
-            a.FilterBySupplierAndPrice();
-            Console.ReadLine();
+            _1_Delegate de = new _1_Delegate();
+            de.Test();
+            while (Console.ReadLine() != null)
+            {
+
+            }
         }
     }
 }
