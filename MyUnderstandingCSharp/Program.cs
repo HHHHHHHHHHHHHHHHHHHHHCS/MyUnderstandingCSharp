@@ -12,7 +12,7 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _1_Delegate de = new _1_Delegate();
+            _2_RefAndValue de = new _2_RefAndValue();
             de.Test();
             while (Console.ReadLine() != null)
             {

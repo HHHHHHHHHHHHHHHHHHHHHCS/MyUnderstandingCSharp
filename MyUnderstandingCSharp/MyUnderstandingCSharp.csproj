@@ -52,6 +52,7 @@
     <Compile Include="_1_First\_1_One\_3_FindByCondition.cs" />
     <Compile Include="_1_First\_1_One\_4_NullableProduct.cs" />
     <Compile Include="_1_First\_2_Two\_1_Delegate.cs" />
+    <Compile Include="_1_First\_2_Two\_2_RefAndValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
