@@ -12,8 +12,8 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _2_RefAndValue de = new _2_RefAndValue();
-            de.Test();
+            _5_FunctionAction box = new _5_FunctionAction();
+            box.Test("qqqq",2.6d,4);
             while (Console.ReadLine() != null)
             {
 

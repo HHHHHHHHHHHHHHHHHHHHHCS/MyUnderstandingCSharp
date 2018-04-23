@@ -53,6 +53,9 @@
     <Compile Include="_1_First\_1_One\_4_NullableProduct.cs" />
     <Compile Include="_1_First\_2_Two\_1_Delegate.cs" />
     <Compile Include="_1_First\_2_Two\_2_RefAndValue.cs" />
+    <Compile Include="_1_First\_2_Two\_3_Boxing.cs" />
+    <Compile Include="_1_First\_2_Two\_4_Delegate.cs" />
+    <Compile Include="_1_First\_2_Two\_5_FunctionAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
