@@ -56,6 +56,7 @@
     <Compile Include="_1_First\_2_Two\_3_Boxing.cs" />
     <Compile Include="_1_First\_2_Two\_4_Delegate.cs" />
     <Compile Include="_1_First\_2_Two\_5_FunctionAction.cs" />
+    <Compile Include="_1_First\_2_Two\_6_DynamicClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
