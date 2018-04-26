@@ -57,6 +57,7 @@
     <Compile Include="_1_First\_2_Two\_4_Delegate.cs" />
     <Compile Include="_1_First\_2_Two\_5_FunctionAction.cs" />
     <Compile Include="_1_First\_2_Two\_6_DynamicClass.cs" />
+    <Compile Include="_1_First\_2_Two\_7_QuestionMark.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
