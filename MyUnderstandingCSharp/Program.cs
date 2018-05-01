@@ -12,8 +12,15 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _5_FunctionAction box = new _5_FunctionAction();
-            box.Test("qqqq",2.6d,4);
+            _9_StaticClass1 c101 = new _9_StaticClass1(1);
+            _9_StaticClass1 c102 = new _9_StaticClass1(2);
+            _9_StaticClass2<string> c201 = new _9_StaticClass2<string>();
+            _9_StaticClass2<int> c202 = new _9_StaticClass2<int>();
+            _9_StaticClass2<decimal> c203 = new _9_StaticClass2<decimal>();
+            _9_StaticClass2<string> c204 = new _9_StaticClass2<string>();
+
+            c101.Print();
+            c102.Print();
             while (Console.ReadLine() != null)
             {
 

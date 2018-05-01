@@ -59,6 +59,7 @@
     <Compile Include="_1_First\_2_Two\_6_DynamicClass.cs" />
     <Compile Include="_1_First\_2_Two\_7_QuestionMark.cs" />
     <Compile Include="_1_First\_2_Two\_8_PairOfT.cs" />
+    <Compile Include="_1_First\_2_Two\_9_StaticClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
