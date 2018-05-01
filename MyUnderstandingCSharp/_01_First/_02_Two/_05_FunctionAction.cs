@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._2_Two
+namespace MyUnderstandingCSharp._01_First._02_Two
 {
-    public class _5_FunctionAction
+    public class _05_FunctionAction
     {
         public void Test(string a1,double x,double y)
         {

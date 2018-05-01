@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._1_One
+namespace MyUnderstandingCSharp._01_First._01_One
 {
     #region C# .Net1
     /// <summary>
@@ -13,7 +13,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// Get和Set 封装的不是很完善
     /// 构造函数不是很简洁
     /// </summary>
-    /*public class _1_Product
+    /*public class _01_Product
     {
         string name;
         public string Name
@@ -63,7 +63,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// 构造函数对比.Net1 简洁
     /// GetSampleProducts 还不够简洁
     /// </summary>
-    /*public class _1_Product
+    /*public class _01_Product
     {
         string name;
         public string Name
@@ -123,7 +123,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// 同时提供内部构造函数 方便内部创造使用
     /// 列表比之前更简洁了
     /// </summary>
-    /*public class _1_Product
+    /*public class _01_Product
     {
         public string Name
         {
@@ -171,7 +171,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// readonly 加入这个关键字能确保变量不被改变
     /// 创建类的时候 显示变量的名称 为了更加清晰方便可以调节顺序
     /// </summary>
-    public class _1_Product
+    public class _01_Product
     {
         readonly string name;
         public string Name
@@ -185,20 +185,20 @@ namespace MyUnderstandingCSharp._1_First._1_One
             get { return price; }
         }
 
-        public _1_Product(string name, decimal price)
+        public _01_Product(string name, decimal price)
         {
             this.name = name;
             this.price = price;
         }
 
-        public static List<_1_Product> GetSampleProducts()
+        public static List<_01_Product> GetSampleProducts()
         {
-            return new List<_1_Product>()
+            return new List<_01_Product>()
             {
-                new _1_Product(name: "West Side Story",price: 9.99m)
-                ,new _1_Product(name:"Assassins",price: 14.99m)
-                ,new _1_Product(name:"Froga", price:13.99m)
-                ,new _1_Product( price:10.99m,name:"Sweeney Todd")
+                new _01_Product(name: "West Side Story",price: 9.99m)
+                ,new _01_Product(name:"Assassins",price: 14.99m)
+                ,new _01_Product(name:"Froga", price:13.99m)
+                ,new _01_Product( price:10.99m,name:"Sweeney Todd")
             };
         }
 

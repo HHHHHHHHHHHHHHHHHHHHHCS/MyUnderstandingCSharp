@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._2_Two
+namespace MyUnderstandingCSharp._01_First._02_Two
 {
-    public class _7_QuestionMark
+    public class _07_QuestionMark
     {
         public void Test01()
         {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._2_Two
+namespace MyUnderstandingCSharp._01_First._02_Two
 {
-    public class _8_PairOfT<T1, T2> : IEquatable<_8_PairOfT<T1, T2>>
+    public class _08_PairOfT<T1, T2> : IEquatable<_08_PairOfT<T1, T2>>
     {
         private static readonly IEqualityComparer<T1> firstComparer
             = EqualityComparer<T1>.Default;
@@ -23,14 +23,14 @@ namespace MyUnderstandingCSharp._1_First._2_Two
         /// </summary>
         /// <param name="first"></param>
         /// <param name="second"></param>
-        public _8_PairOfT(T1 first, T2 second)
+        public _08_PairOfT(T1 first, T2 second)
         {
 
             this.first = first;
             this.second = second;
         }
 
-        public bool Equals(_8_PairOfT<T1, T2> other)
+        public bool Equals(_08_PairOfT<T1, T2> other)
         {
             return other != null
                 && firstComparer.Equals(this.first, other.first)
@@ -39,7 +39,7 @@ namespace MyUnderstandingCSharp._1_First._2_Two
 
         public override bool Equals(object obj)
         {
-            return Equals(obj as _8_PairOfT<T1, T2>);
+            return Equals(obj as _08_PairOfT<T1, T2>);
         }
 
         public override int GetHashCode()
@@ -61,10 +61,10 @@ namespace MyUnderstandingCSharp._1_First._2_Two
         /// <param name="first"></param>
         /// <param name="second"></param>
         /// <returns></returns>
-        public static _8_PairOfT<T1, T2> Of<T1, T2>(T1 first, T2 second)
+        public static _08_PairOfT<T1, T2> Of<T1, T2>(T1 first, T2 second)
         {
             
-            return new _8_PairOfT<T1,T2>(first, second); ;
+            return new _08_PairOfT<T1,T2>(first, second); ;
         }
 
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._2_Two
+namespace MyUnderstandingCSharp._01_First._02_Two
 {
     delegate void StringProcessor(string input);
 
@@ -31,7 +31,7 @@ namespace MyUnderstandingCSharp._1_First._2_Two
 
 
 
-    public class _1_Delegate
+    public class _01_Delegate
     {
         event StringProcessor SP_Event;
 

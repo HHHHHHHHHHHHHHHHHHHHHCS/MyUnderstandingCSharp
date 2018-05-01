@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._1_One
+namespace MyUnderstandingCSharp._01_First._01_One
 {
     /// <summary>
     /// C# .net4 可选参数
     /// </summary>
-    public class _5_OptionalParameterProduct
+    public class _05_OptionalParameterProduct
     {
 
 
@@ -26,7 +26,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
             private set { price = value; }
         }
 
-        public _5_OptionalParameterProduct(string bookName, decimal? price = null)
+        public _05_OptionalParameterProduct(string bookName, decimal? price = null)
         {
             this.bookName = bookName;
             Price = price;
@@ -35,12 +35,12 @@ namespace MyUnderstandingCSharp._1_First._1_One
 
         public void FindNull()
         {
-            List<_5_OptionalParameterProduct> nullableProducts = new List<_5_OptionalParameterProduct>();
-            nullableProducts.Add(new _5_OptionalParameterProduct("AAA", 1));
-            nullableProducts.Add(new _5_OptionalParameterProduct("BBB", 2));
-            nullableProducts.Add(new _5_OptionalParameterProduct("CCC"));
-            nullableProducts.Add(new _5_OptionalParameterProduct("DDD"));
-            nullableProducts.Add(new _5_OptionalParameterProduct("EEE", 3));
+            List<_05_OptionalParameterProduct> nullableProducts = new List<_05_OptionalParameterProduct>();
+            nullableProducts.Add(new _05_OptionalParameterProduct("AAA", 1));
+            nullableProducts.Add(new _05_OptionalParameterProduct("BBB", 2));
+            nullableProducts.Add(new _05_OptionalParameterProduct("CCC"));
+            nullableProducts.Add(new _05_OptionalParameterProduct("DDD"));
+            nullableProducts.Add(new _05_OptionalParameterProduct("EEE", 3));
             nullableProducts.FindAll(p => p.Price == null).ForEach(Console.WriteLine);
         }
 

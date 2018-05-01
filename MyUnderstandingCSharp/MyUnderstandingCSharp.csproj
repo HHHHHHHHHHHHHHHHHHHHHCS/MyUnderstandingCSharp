@@ -43,23 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="_1_First\_1_One\_6_LinqProduct.cs" />
-    <Compile Include="_1_First\_1_One\_5_OptionalParameterProduct.cs" />
-    <Compile Include="_1_First\_1_One\_1_Product.cs" />
+    <Compile Include="_01_First\_01_One\_06_Product.cs" />
+    <Compile Include="_01_First\_01_One\_05_OptionalParameterProduct.cs" />
+    <Compile Include="_01_First\_01_One\_01_Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_1_First\_1_One\_2_SortArray.cs" />
-    <Compile Include="_1_First\_1_One\_3_FindByCondition.cs" />
-    <Compile Include="_1_First\_1_One\_4_NullableProduct.cs" />
-    <Compile Include="_1_First\_2_Two\_1_Delegate.cs" />
-    <Compile Include="_1_First\_2_Two\_2_RefAndValue.cs" />
-    <Compile Include="_1_First\_2_Two\_3_Boxing.cs" />
-    <Compile Include="_1_First\_2_Two\_4_Delegate.cs" />
-    <Compile Include="_1_First\_2_Two\_5_FunctionAction.cs" />
-    <Compile Include="_1_First\_2_Two\_6_DynamicClass.cs" />
-    <Compile Include="_1_First\_2_Two\_7_QuestionMark.cs" />
-    <Compile Include="_1_First\_2_Two\_8_PairOfT.cs" />
-    <Compile Include="_1_First\_2_Two\_9_StaticClass.cs" />
+    <Compile Include="_01_First\_01_One\_02_SortArray.cs" />
+    <Compile Include="_01_First\_01_One\_03_FindByCondition.cs" />
+    <Compile Include="_01_First\_01_One\_04_NullableProduct.cs" />
+    <Compile Include="_01_First\_02_Two\_10_ListAndArrayList.cs" />
+    <Compile Include="_01_First\_02_Two\_01_Delegate.cs" />
+    <Compile Include="_01_First\_02_Two\_02_RefAndValue.cs" />
+    <Compile Include="_01_First\_02_Two\_03_Boxing.cs" />
+    <Compile Include="_01_First\_02_Two\_04_Delegate.cs" />
+    <Compile Include="_01_First\_02_Two\_05_FunctionAction.cs" />
+    <Compile Include="_01_First\_02_Two\_06_DynamicClass.cs" />
+    <Compile Include="_01_First\_02_Two\_07_QuestionMark.cs" />
+    <Compile Include="_01_First\_02_Two\_08_PairOfT.cs" />
+    <Compile Include="_01_First\_02_Two\_09_StaticClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

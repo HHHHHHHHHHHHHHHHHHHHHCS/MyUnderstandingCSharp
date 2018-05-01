@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._1_One
+namespace MyUnderstandingCSharp._01_First._01_One
 {
     #region C# .Net1
     /// <summary>
@@ -22,7 +22,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
         }
     }
 
-    public class _2_SortArray
+    public class _02_SortArray
     {
         public static void Sort()
         {
@@ -50,7 +50,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
         }
     }
 
-    public class _2_SortArray
+    public class _02_SortArray
     {
         public static void Sort()
         {
@@ -68,7 +68,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// <summary>
     /// C# 使用委托减少了比较类的创建 但是可以更加简洁
     /// </summary>
-    /*public class _2_SortArray
+    /*public class _02_SortArray
     {
         public static void Sort()
         {
@@ -91,7 +91,7 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// <summary>
     /// C# 使用了Lambda 更简洁
     /// </summary>
-    /*public class _2_SortArray
+    /*public class _02_SortArray
     {
         public static void Sort()
         {
@@ -111,12 +111,12 @@ namespace MyUnderstandingCSharp._1_First._1_One
     /// C# 使用了OrderBy最简洁
     /// OrderBy 是扩展方法
     /// </summary>
-    public class _2_SortArray
+    public class _02_SortArray
     {
         public static void Sort()
         {
-            List<_1_Product> productList = _1_Product.GetSampleProducts();
-            foreach (_1_Product product in productList.OrderBy(p=>p.Name))
+            List<_01_Product> productList = _01_Product.GetSampleProducts();
+            foreach (_01_Product product in productList.OrderBy(p=>p.Name))
             {
                 Console.WriteLine(product);
             }

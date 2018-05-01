@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._2_Two
+namespace MyUnderstandingCSharp._01_First._02_Two
 {
-    public class _6_DynamicClass
+    public class _06_DynamicClass
     {
         /// <summary>
         /// C# .net3仍然是静态语言 只是编译而已

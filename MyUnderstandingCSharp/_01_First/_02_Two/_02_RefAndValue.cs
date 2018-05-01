@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._2_Two
+namespace MyUnderstandingCSharp._01_First._02_Two
 {
     class Point
     {
@@ -24,7 +24,7 @@ namespace MyUnderstandingCSharp._1_First._2_Two
     }
 
 
-    public class _2_RefAndValue
+    public class _02_RefAndValue
     {
         public void Test()
         {

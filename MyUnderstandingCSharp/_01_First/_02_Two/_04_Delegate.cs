@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyUnderstandingCSharp._1_First._2_Two
+namespace MyUnderstandingCSharp._01_First._02_Two
 {
-    public class _4_Delegate
+    public class _04_Delegate
     {
         public delegate void MouseEventHandler(object sender, EventArgs e);
 
