@@ -1,4 +1,5 @@
 ﻿using MyUnderstandingCSharp._01_First._02_Two;
+using MyUnderstandingCSharp._01_First._03_Three;
 using System;
 
 namespace MyUnderstandingCSharp
@@ -7,13 +8,12 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _10_ListAndArrayList test = new _10_ListAndArrayList();
-
-            test.AddArrayListInt();
-            test.AddListInt();
-            while (Console.ReadLine() != null)
+            _02_Type.StaticTest();
+            _02_Type type = new _02_Type();
+            type.Test();
+            while(true)
             {
-
+                Console.ReadLine();
             }
         }
     }

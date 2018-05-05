@@ -61,6 +61,8 @@
     <Compile Include="_01_First\_02_Two\_07_QuestionMark.cs" />
     <Compile Include="_01_First\_02_Two\_08_PairOfT.cs" />
     <Compile Include="_01_First\_02_Two\_09_StaticClass.cs" />
+    <Compile Include="_01_First\_03_Three\_01_CountingEnumer.cs" />
+    <Compile Include="_01_First\_03_Three\_02_Type.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
