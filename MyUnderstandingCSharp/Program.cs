@@ -8,9 +8,8 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _02_Type.StaticTest();
-            _02_Type type = new _02_Type();
-            type.Test();
+            _03__NullableValue t = new _03__NullableValue();
+            t.Test();
             while(true)
             {
                 Console.ReadLine();

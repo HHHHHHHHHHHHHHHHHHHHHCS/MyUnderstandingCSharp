@@ -63,6 +63,7 @@
     <Compile Include="_01_First\_02_Two\_09_StaticClass.cs" />
     <Compile Include="_01_First\_03_Three\_01_CountingEnumer.cs" />
     <Compile Include="_01_First\_03_Three\_02_Type.cs" />
+    <Compile Include="_01_First\_03_Three\_03_ NullableValue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
