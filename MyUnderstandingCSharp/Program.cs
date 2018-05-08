@@ -9,7 +9,7 @@ namespace MyUnderstandingCSharp
         static void Main(string[] args)
         {
             _03__NullableValue t = new _03__NullableValue();
-            t.Test();
+            t.Test02();
             while(true)
             {
                 Console.ReadLine();

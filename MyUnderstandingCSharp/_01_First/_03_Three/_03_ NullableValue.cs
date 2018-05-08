@@ -22,8 +22,10 @@ namespace MyUnderstandingCSharp._01_First._03_Three
             Console.WriteLine("GetHashCode:{0}", x.GetHashCode());
         }
         
-
-        public void Test()
+        /// <summary>
+        /// 测试可空类型的值
+        /// </summary>
+        public void Test01()
         {
             int? x = 5;
             x = new int?(5);
@@ -33,6 +35,32 @@ namespace MyUnderstandingCSharp._01_First._03_Three
             x = new int?();
             Console.WriteLine("Instance With Value:");
             Display(x);
+        }
+
+        /// <summary>
+        /// 测试可空类型的类型
+        /// </summary>
+        public void Test02()
+        {
+            int? nullable = 5;
+
+            object boxed = nullable;
+            Console.WriteLine(boxed.GetType());
+
+            int normal = (int)boxed;
+            Console.WriteLine(normal.GetType());
+
+            nullable =new int?();
+            Console.WriteLine(nullable);
+            Console.WriteLine(nullable == null);
+
+            boxed = nullable;
+            Console.WriteLine(boxed == null);
+
+            nullable = (int?)boxed; 
+            Console.WriteLine(nullable.HasValue);
+
+            Console.WriteLine(nullable<10);
         }
     }
 }
