@@ -21,7 +21,13 @@ namespace MyUnderstandingCSharp._01_First._03_Three
             Console.WriteLine("ToString:{0}", x.ToString());
             Console.WriteLine("GetHashCode:{0}", x.GetHashCode());
         }
-        
+
+        static void ParseInt32(object o)
+        {
+            int? nullable = o as int?;
+            Console.WriteLine(nullable != null ? nullable.Value.ToString() : "NULL");
+            }
+
         /// <summary>
         /// 测试可空类型的值
         /// </summary>
@@ -61,6 +67,16 @@ namespace MyUnderstandingCSharp._01_First._03_Three
             Console.WriteLine(nullable.HasValue);
 
             Console.WriteLine(nullable<10);
+        }
+
+        /// <summary>
+        /// 测试可空类型的类型
+        /// </summary>
+        public void Test03()
+        {
+            ParseInt32(3);
+            ParseInt32("3");
+            ParseInt32("Some Thing");
         }
     }
 }
