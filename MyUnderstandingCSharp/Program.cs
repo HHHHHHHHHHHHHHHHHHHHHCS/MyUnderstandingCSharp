@@ -8,9 +8,10 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _03__NullableValue t = new _03__NullableValue();
-            t.Test03();
-            while(true)
+            _05_AnonymousDelegate t = new _05_AnonymousDelegate();
+            t.Test1();
+            t.Test2();
+            while (true)
             {
                 Console.ReadLine();
             }
