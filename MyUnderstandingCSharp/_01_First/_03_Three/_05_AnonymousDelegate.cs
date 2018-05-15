@@ -38,5 +38,22 @@ namespace MyUnderstandingCSharp._01_First._03_Three
             SortAndShowFiles("Sort by Length:", delegate (FileInfo f1, FileInfo f2)
             { return f1.Length.CompareTo(f2.Length); });
         }
+
+        public void Test3()
+        {
+            string str = "before x is created";
+            Console.WriteLine(str);
+            Action act = delegate
+            {
+                Console.WriteLine(str);
+                str = "change x  is changed";
+            };
+            str = "x will invoke";
+            act();
+            Console.WriteLine(str);
+            str = "x have invoked";
+            act();
+            Console.WriteLine(str);
+        }
     }
 }

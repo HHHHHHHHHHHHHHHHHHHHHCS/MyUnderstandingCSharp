@@ -9,8 +9,7 @@ namespace MyUnderstandingCSharp
         static void Main(string[] args)
         {
             _05_AnonymousDelegate t = new _05_AnonymousDelegate();
-            t.Test1();
-            t.Test2();
+            t.Test3();
             while (true)
             {
                 Console.ReadLine();
