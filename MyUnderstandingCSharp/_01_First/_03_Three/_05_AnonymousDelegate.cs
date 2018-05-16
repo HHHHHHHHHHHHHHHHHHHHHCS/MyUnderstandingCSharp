@@ -15,12 +15,12 @@ namespace MyUnderstandingCSharp._01_First._03_Three
               Console.WriteLine(s);
           };
 
-        private static void SortAndShowFiles(string title,Comparison<FileInfo> sortOrder)
+        private static void SortAndShowFiles(string title, Comparison<FileInfo> sortOrder)
         {
             FileInfo[] files = new DirectoryInfo(@"C:\").GetFiles();
             Array.Sort(files, sortOrder);
             Console.WriteLine(title);
-            foreach(FileInfo file in files)
+            foreach (FileInfo file in files)
             {
                 Console.WriteLine("{0}  [{1} bytes]", file.Name, file.Length);
             }
@@ -54,6 +54,86 @@ namespace MyUnderstandingCSharp._01_First._03_Three
             str = "x have invoked";
             act();
             Console.WriteLine(str);
+        }
+
+
+        private Action Test4Delegate()
+        {
+            int counter = 5;
+            Action t = delegate
+            {
+                Console.WriteLine("Action:" + counter);
+                counter++;
+            };
+            t();
+            Console.WriteLine("Test4Delegate:" + counter);
+            return t;
+        }
+
+        public void Test4()
+        {
+            Action act = Test4Delegate();
+
+            act();
+
+            act();
+        }
+
+        private List<Action> Test5Delegate()
+        {
+            List<Action> list = new List<Action>();
+            for (int i = 0; i < 5; i++)
+            {
+                int counter = i * 10;
+                list.Add(delegate
+                {
+                    Console.WriteLine(counter);
+                    counter++;
+                });
+
+            }
+            return list;
+        }
+
+        public void Test5()
+        {
+            Console.WriteLine("-----Test5-----");
+            List<Action> actList = Test5Delegate();
+
+            actList[0]();
+            actList[0]();
+            actList[0]();
+
+            actList[1]();
+        }
+
+        private List<Action> Test6Delegate()
+        {
+            List<Action> list = new List<Action>();
+            int counter;
+            for (int i = 0; i < 5; i++)
+            {
+                counter = i * 10;
+                list.Add(delegate
+                {
+                    Console.WriteLine(counter);
+                    counter++;
+                });
+
+            }
+            return list;
+        }
+
+        public void Test6()
+        {
+            Console.WriteLine("-----Test6-----");
+            List<Action> actList = Test6Delegate();
+
+            actList[0]();
+            actList[0]();
+            actList[0]();
+
+            actList[1]();
         }
     }
 }
