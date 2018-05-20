@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -134,7 +135,77 @@ namespace MyUnderstandingCSharp._01_First._03_Three
 
                 iterator.Dispose();
             }
+        }
 
+
+        private string str06Path = @"Test06.txt";
+
+        public void Test06_01()
+        {
+            Console.WriteLine("Test06_01:");
+            using (TextReader reader = File.OpenText(str06Path))
+            {
+                string line;
+                while((line=reader.ReadLine())!=null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+        }
+
+        private IEnumerable<string> ReadLines_06()
+        {
+            using (TextReader reader = File.OpenText(str06Path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    yield return line;
+                }
+            }
+        }
+
+        public void Test06_02()
+        {
+            Console.WriteLine("Test06_02:");
+            foreach (var item in ReadLines_06())
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+
+        private IEnumerable<string> ReadLines_07(Func<TextReader> provider)
+        {
+            using (TextReader reader = provider())
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    yield return line;
+                }
+            }
+        }
+
+        private IEnumerable<string> ReadLines_07(string filename)
+        {
+            return ReadLines_07(delegate {
+                return File.OpenText(filename);
+            });
+        }
+
+        private IEnumerable<string> ReadLines_07()
+        {
+            return ReadLines_07(str06Path);
+        }
+
+        public void Test07()
+        {
+            Console.WriteLine("Test07:");
+            foreach (var item in ReadLines_07())
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

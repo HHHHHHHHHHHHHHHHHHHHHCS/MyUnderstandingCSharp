@@ -9,7 +9,7 @@ namespace MyUnderstandingCSharp
         static void Main(string[] args)
         {
             _06_IEnumerator t = new _06_IEnumerator();
-            t.Test05();
+            t.Test07();
             while (true)
             {
                 Console.ReadLine();
