@@ -67,6 +67,7 @@
     <Compile Include="_01_First\_03_Three\_04_NullPerson.cs" />
     <Compile Include="_01_First\_03_Three\_05_AnonymousDelegate.cs" />
     <Compile Include="_01_First\_03_Three\_06_IEnumerator.cs" />
+    <Compile Include="_01_First\_03_Three\_07_Partial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

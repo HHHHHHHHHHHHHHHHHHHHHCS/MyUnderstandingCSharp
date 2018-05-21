@@ -138,7 +138,7 @@ namespace MyUnderstandingCSharp._01_First._03_Three
         }
 
 
-        private string str06Path = @"Test06.txt";
+        private string str06Path = @"01_03_06_Test06.txt";
 
         public void Test06_01()
         {
@@ -205,6 +205,39 @@ namespace MyUnderstandingCSharp._01_First._03_Three
             foreach (var item in ReadLines_07())
             {
                 Console.WriteLine(item);
+            }
+        }
+
+
+        public IEnumerable<T> Where<T>(IEnumerable<T> source,Predicate<T> predicate)
+        {
+            if(source==null||predicate==null)
+            {
+                throw new Exception();
+            }
+            return WhereImpl(source, predicate);
+        }
+
+        private IEnumerable<T> WhereImpl<T>(IEnumerable<T> source, Predicate<T> predicate)
+        {
+            foreach(T item in source)
+            {
+                if(predicate(item))
+                {
+                    yield return item;
+                }
+            }
+        }
+
+        private string str08Path = @"01_03_06_Test08.txt";
+        public void Test08()
+        {
+            IEnumerable<string> lines = ReadLines_07(str08Path);
+            Predicate<string> predicate = delegate (string line)
+            {  return line.StartsWith("["); };
+            foreach (var str in Where(lines,predicate))
+            {
+                Console.WriteLine(str);
             }
         }
     }
