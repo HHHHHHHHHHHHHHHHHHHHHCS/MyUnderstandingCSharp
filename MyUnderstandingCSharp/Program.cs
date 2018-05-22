@@ -8,8 +8,8 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _06_IEnumerator t = new _06_IEnumerator();
-            t.Test08();
+            _07_Partial t = new _07_Partial();
+            t.Test02();
             while (true)
             {
                 Console.ReadLine();
