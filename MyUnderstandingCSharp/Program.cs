@@ -1,4 +1,6 @@
-﻿using MyUnderstandingCSharp._01_First._02_Two;
+﻿
+//extern alias 不搞了
+using MyUnderstandingCSharp._01_First._02_Two;
 using MyUnderstandingCSharp._01_First._03_Three;
 using System;
 
@@ -8,8 +10,11 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _07_Partial t = new _07_Partial();
+            _09_Namespace t = new _09_Namespace();
+            t.Test01();
             t.Test02();
+            t.Test03();
+            t.Test04();
             while (true)
             {
                 Console.ReadLine();
