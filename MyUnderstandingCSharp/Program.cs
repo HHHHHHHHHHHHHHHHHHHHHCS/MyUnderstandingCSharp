@@ -11,8 +11,9 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _02_GetSetSturct t = new _02_GetSetSturct();
-            t.Test();
+            _04_AnonymousType t = new _04_AnonymousType();
+            t.Test01();
+            t.Test02();
             while (true)
             {
                 Console.ReadLine();

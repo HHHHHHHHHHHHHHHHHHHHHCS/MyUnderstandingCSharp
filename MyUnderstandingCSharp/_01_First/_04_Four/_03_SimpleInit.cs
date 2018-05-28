@@ -79,8 +79,54 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             _03_Person tom2 = new _03_Person("Tom")
             {
                 Age = 9,
-                Home = { Country="CN",Town="Wulalalala"}
+                Home = { Country = "CN", Town = "Wulalalala" }
             };
+
+        }
+
+        public void Test04()
+        {
+            List<string> names1 = new List<string>();
+            names1.Add("1");
+            names1.Add("2");
+            names1.Add("3");
+            names1.Add("4");
+            names1.Add("5");
+
+            List<string> names2 = new List<string>()
+            {
+                "1","2","3","4","5","6"
+            };
+
+            Dictionary<int, string> dic = new Dictionary<int, string>()
+            {
+                { 1,"1" },
+                { 2,"2" },
+                { 3,"3" },
+            };
+
+        }
+
+        public void Test05()
+        {
+            _03_Person tom = new _03_Person
+            {
+                Name = "Tom",
+                Age = 9,
+                Home = { Town = "yoooo", Country = "CN" },
+                Friends =
+                {
+                    new  _03_Person{ Name="A" },
+                    new _03_Person("B"),
+                    new _03_Person() { Name="Z",Age=7},
+                    new _03_Person("F")
+                    {
+                        Age=666,
+                        Home= {  Country="UK", Town="ZZZZ"}
+                    }
+                }
+            };
+
 
         }
     }

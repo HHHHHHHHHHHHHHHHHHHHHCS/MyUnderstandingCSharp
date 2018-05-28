@@ -73,6 +73,7 @@
     <Compile Include="_01_First\_04_Four\_01_GetSet.cs" />
     <Compile Include="_01_First\_04_Four\_02_GetSetSturct.cs" />
     <Compile Include="_01_First\_04_Four\_03_SimpleInit.cs" />
+    <Compile Include="_01_First\_04_Four\_04_AnonymousType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
