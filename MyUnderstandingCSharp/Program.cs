@@ -14,6 +14,8 @@ namespace MyUnderstandingCSharp
             _04_AnonymousType t = new _04_AnonymousType();
             t.Test01();
             t.Test02();
+            t.Test03();
+  
             while (true)
             {
                 Console.ReadLine();
