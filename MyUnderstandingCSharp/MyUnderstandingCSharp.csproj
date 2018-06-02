@@ -75,6 +75,7 @@
     <Compile Include="_01_First\_04_Four\_03_SimpleInit.cs" />
     <Compile Include="_01_First\_04_Four\_04_AnonymousType.cs" />
     <Compile Include="_01_First\_04_Four\_05_Lambda.cs" />
+    <Compile Include="_01_First\_04_Four\_06_ExtendMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

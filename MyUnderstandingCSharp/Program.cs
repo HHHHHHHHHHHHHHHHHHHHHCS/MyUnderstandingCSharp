@@ -11,11 +11,11 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _05_Lambda t = new _05_Lambda();
+            _06_ExtendMethod t = new _06_ExtendMethod();
             t.Test01();
             t.Test02();
 
-  
+
             while (true)
             {
                 Console.ReadLine();
