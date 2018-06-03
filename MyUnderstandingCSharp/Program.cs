@@ -12,8 +12,7 @@ namespace MyUnderstandingCSharp
         static void Main(string[] args)
         {
             _06_ExtendMethod t = new _06_ExtendMethod();
-            t.Test01();
-            t.Test02();
+            t.Test03();
 
 
             while (true)

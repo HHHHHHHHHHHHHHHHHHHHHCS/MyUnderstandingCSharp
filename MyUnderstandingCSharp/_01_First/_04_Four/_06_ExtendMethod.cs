@@ -40,6 +40,16 @@ namespace MyUnderstandingCSharp._01_First._04_Four
                 }
             }
         }
+
+        public void Test03()
+        {
+            object y = null;
+            Console.WriteLine(y.IsNull());
+            int x = 3;
+            Console.WriteLine(x.IsNull());
+            string z = "2333";
+            Console.WriteLine(z.IsNull());
+        }
     }
 
     public static class StreamUtil01
@@ -89,4 +99,18 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             }
         }
     }
+
+    public static class NullUtil
+    {
+        public static bool IsNull(this object o)
+        {
+            return o == null;
+        }
+
+        public static bool IsNull(this string o)
+        {
+            return string.IsNullOrEmpty(o);
+        }
+    }
+
 }
