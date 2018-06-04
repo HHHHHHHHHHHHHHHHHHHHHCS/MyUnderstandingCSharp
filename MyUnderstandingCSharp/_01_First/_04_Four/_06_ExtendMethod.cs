@@ -50,6 +50,16 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             string z = "2333";
             Console.WriteLine(z.IsNull());
         }
+
+        public void Test04()
+        {
+            RangeEnumerable.Range01();
+            RangeEnumerable.Range02();
+            RangeEnumerable.Range03();
+            RangeEnumerable.Range04();
+            RangeEnumerable.Range05();
+            RangeEnumerable.Range06();
+        }
     }
 
     public static class StreamUtil01
@@ -110,6 +120,84 @@ namespace MyUnderstandingCSharp._01_First._04_Four
         public static bool IsNull(this string o)
         {
             return string.IsNullOrEmpty(o);
+        }
+    }
+
+    public static class RangeEnumerable
+    {
+        public static void Range01()
+        {
+            var collection = Enumerable.Range(0, 10);
+            foreach (var item in collection)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("----------------------------");
+        }
+
+        public static void Range02()
+        {
+            var collection = Enumerable.Range(0, 10).Reverse();
+            foreach (var item in collection)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("----------------------------");
+        }
+
+        public static void Range03()
+        {
+            var collection = Enumerable.Range(0, 10)
+                .Where(x => x % 3 == 0)
+                .Reverse();
+            foreach (var item in collection)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("----------------------------");
+        }
+
+        public static void Range04()
+        {
+            var collection = Enumerable.Range(0, 10)
+                .Where(x => x % 3 == 0)
+                .Select(x => new { Old = x, New = x * x })
+                .Reverse();
+
+            foreach (var item in collection)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("----------------------------");
+        }
+
+        public static void Range05()
+        {
+            var collection = Enumerable.Range(-5, 11)
+                .Select(x => new { Old = x, New = x * x })
+                .OrderBy(x => x.New)
+                .ThenBy(x => x.Old);
+
+            foreach (var item in collection)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("----------------------------");
+        }
+
+        public static void Range06()
+        {
+            var collection = Enumerable.Range(0, 36)
+                .GroupBy(x => { var sqrt = Math.Sqrt(x); return sqrt == (int)sqrt; })
+                .Select(x => new { Key =x.Key, Count = x.Count() })
+                .OrderByDescending(x => x.Key);
+
+            foreach (var item in collection)
+            {
+                Console.WriteLine(item);
+                Console.WriteLine("//////////");
+            }
+            Console.WriteLine("----------------------------");
         }
     }
 
