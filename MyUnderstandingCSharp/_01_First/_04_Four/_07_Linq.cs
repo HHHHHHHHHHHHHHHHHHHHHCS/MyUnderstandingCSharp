@@ -14,7 +14,7 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             var newList01 = from userList in User.GetDefaultUser()
                             where userList.From == User.Country.CN
                             select userList;
-            foreach(var item in newList01)
+            foreach (var item in newList01)
             {
                 Console.WriteLine(item);
             }
@@ -48,7 +48,7 @@ namespace MyUnderstandingCSharp._01_First._04_Four
 
         public void Test04()
         {
-            ArrayList list = new ArrayList { 1, 2, 3, 4, 5 ,"First", "Second", "Third" };
+            ArrayList list = new ArrayList { 1, 2, 3, 4, 5, "First", "Second", "Third" };
             IEnumerable<int> li = list.OfType<int>();
             li.ToList().ForEach(p => Console.WriteLine(p));
             Console.WriteLine("-------------------");
@@ -56,10 +56,10 @@ namespace MyUnderstandingCSharp._01_First._04_Four
 
         public void Test05()
         {
-            ArrayList list = new ArrayList {"Zero", "First", "Second", "Third" };
+            ArrayList list = new ArrayList { "Zero", "First", "Second", "Third" };
             IEnumerable<string> strings = from string e in list
-                          select e.Substring(0, 3);
-            foreach(var item in strings)
+                                          select e.Substring(0, 3);
+            foreach (var item in strings)
             {
                 Console.WriteLine(item);
             }
@@ -70,6 +70,67 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test06()
+        {
+            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            IEnumerable<int> li = from temp in list
+                                  where temp != 3 && temp != 5
+                                  select temp;
+            li.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test07()
+        {
+            List<int> list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            IEnumerable<int> li = from temp in list
+                                  orderby temp descending
+                                  select temp;
+            li.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test08()
+        {
+            List<KeyValuePair<string, int>> list = new List<KeyValuePair<string, int>>
+            {
+                new KeyValuePair<string, int>("a",1),
+                new KeyValuePair<string, int>("a",2),
+                new KeyValuePair<string, int>("a",3),
+                new KeyValuePair<string, int>("a",4),
+                new KeyValuePair<string, int>("b",6),
+                new KeyValuePair<string, int>("b",5),
+                new KeyValuePair<string, int>("c",0),
+                new KeyValuePair<string, int>("d",-1),
+            };
+
+            var li = from temp in list
+                     orderby temp.Key descending, temp.Value ascending
+                     select temp;
+            li.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test09()
+        {
+            List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("aaaa","a"),
+                new KeyValuePair<string, string>("bbbb","bb"),
+                new KeyValuePair<string, string>("cccc","ccc"),
+                new KeyValuePair<string, string>("dddd","dddd"),
+                new KeyValuePair<string, string>("eeee","eeeee"),
+            };
+
+            var li = from temp in list
+                     let k1= temp.Key.Length
+                     let k2 = temp.Value.Length
+                     orderby k1 descending
+                     select new {temp.Key,k1,k2};
+            li.ToList().ForEach(p => Console.WriteLine(p));
             Console.WriteLine("-------------------");
         }
     }
@@ -116,7 +177,7 @@ namespace MyUnderstandingCSharp._01_First._04_Four
     public static class Extensions
     {
         public static Dummy<T> Where<T>(this Dummy<T> dummy
-            ,Func<T,bool> predicate)
+            , Func<T, bool> predicate)
         {
             Console.WriteLine("Where called");
             return dummy;
@@ -125,7 +186,7 @@ namespace MyUnderstandingCSharp._01_First._04_Four
 
     public class Dummy<T>
     {
-        public Dummy<U> Select<U>( Func<T, U> selector)
+        public Dummy<U> Select<U>(Func<T, U> selector)
         {
             Console.WriteLine("Select called");
             return new Dummy<U>();

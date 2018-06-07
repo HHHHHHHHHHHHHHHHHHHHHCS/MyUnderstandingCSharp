@@ -12,9 +12,7 @@ namespace MyUnderstandingCSharp
         static void Main(string[] args)
         {
             _07_Linq t = new _07_Linq();
-            t.Test03();
-            t.Test04();
-            t.Test05();
+            t.Test09();
 
             while (true)
             {
