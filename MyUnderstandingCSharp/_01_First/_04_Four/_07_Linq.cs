@@ -126,40 +126,163 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             };
 
             var li = from temp in list
-                     let k1= temp.Key.Length
+                     let k1 = temp.Key.Length
                      let k2 = temp.Value.Length
                      orderby k1 descending
-                     select new {temp.Key,k1,k2};
+                     select new { temp.Key, k1, k2 };
             li.ToList().ForEach(p => Console.WriteLine(p));
             Console.WriteLine("-------------------");
+        }
+
+        public void Test10()
+        {
+            List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("aaaa","a"),
+                new KeyValuePair<string, string>("bbbb","bb"),
+                new KeyValuePair<string, string>("cccc","ccc"),
+                new KeyValuePair<string, string>("dddd","dddd"),
+                new KeyValuePair<string, string>("eeee","eeeee"),
+            };
+
+            var newList = list.Select(user => new { name = user.Key, length = user.Value.Length })
+                .OrderByDescending(user => user.length)
+                .Select(user => new { name = user.name, length = user.length });
+            newList.ToList().ForEach(p => Console.WriteLine(p));
+
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test11()
+        {
+            List<KeyValuePair<string, string>> list1 = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("aaaa","a"),
+                new KeyValuePair<string, string>("bbbb","bb"),
+                new KeyValuePair<string, string>("cccc","ccc"),
+                new KeyValuePair<string, string>("dddd","dddd"),
+                new KeyValuePair<string, string>("eeee","eeeee"),
+            };
+            List<KeyValuePair<string, bool>> list2 = new List<KeyValuePair<string, bool>>
+            {
+                new KeyValuePair<string, bool>("aaaa",true),
+                new KeyValuePair<string, bool>("bbbb",false),
+                new KeyValuePair<string, bool>("cccc",true),
+                new KeyValuePair<string, bool>("dddd",false),
+                new KeyValuePair<string, bool>("eeee",true),
+            };
+
+            var newList = from table1 in list1
+                          join table2 in list2
+                          on table1.Key equals table2.Key
+                          select new { name = table1.Key, other = table1.Value, sex = table2.Value };
+            newList.ToList().ForEach(p => Console.WriteLine(p));
+
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test12()
+        {
+            List<KeyValuePair<string, int>> list1 = new List<KeyValuePair<string, int>>
+            {
+                new KeyValuePair<string, int>("aaaa",16),
+                new KeyValuePair<string, int>("bbbb",17),
+                new KeyValuePair<string, int>("cccc",18),
+                new KeyValuePair<string, int>("dddd",19),
+                new KeyValuePair<string, int>("eeee",20),
+            };
+            List<KeyValuePair<string, bool>> list2 = new List<KeyValuePair<string, bool>>
+            {
+                new KeyValuePair<string, bool>("aaaa",true),
+                new KeyValuePair<string, bool>("bbbb",false),
+                new KeyValuePair<string, bool>("cccc",true),
+                new KeyValuePair<string, bool>("dddd",false),
+                new KeyValuePair<string, bool>("eeee",true),
+            };
+
+            var newList1 = from table1 in list1
+                           where table1.Value >= 18
+                           join table2 in list2
+                           on table1.Key equals table2.Key
+                           select new { name = table1.Key, sex = table2.Value, age = table1.Value };
+            newList1.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+
+            var newList2 = from table2 in list2
+                           join table1 in (from temp in list1
+                                           where temp.Value < 18
+                                           select temp)
+                           on table2.Key equals table1.Key
+                           select new { name = table1.Key, sex = table2.Value, age = table1.Value };
+            newList2.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+        }
+
+
+        public void Test13()
+        {
+            List<KeyValuePair<string, int>> list1 = new List<KeyValuePair<string, int>>
+            {
+                new KeyValuePair<string, int>("aaaa",16),
+                new KeyValuePair<string, int>("bbbb",17),
+                new KeyValuePair<string, int>("cccc",18),
+                new KeyValuePair<string, int>("dddd",19),
+                new KeyValuePair<string, int>("eeee",20),
+            };
+            List<KeyValuePair<string, bool>> list2 = new List<KeyValuePair<string, bool>>
+            {
+                new KeyValuePair<string, bool>("aaaa",true),
+                new KeyValuePair<string, bool>("bbbb",false),
+                new KeyValuePair<string, bool>("cccc",true),
+                new KeyValuePair<string, bool>("dddd",false),
+                new KeyValuePair<string, bool>("eeee",true),
+            };
+
+            var newList1 = from table1 in list1
+                           where table1.Value >= 18
+                           join table2 in list2
+                           on table1.Key equals table2.Key
+                           into newTable
+                           select new {age = table1.Value,table= newTable };
+            newList1.ToList().ForEach(p =>
+            {
+                Console.WriteLine(p.age);
+                p.table.ToList().ForEach(z => Console.WriteLine(z));
+            });
+            Console.WriteLine("-------------------");
+
+
         }
     }
 
 
-    public class User
+}
+
+
+public class User
+{
+    public enum Country
     {
-        public enum Country
-        {
-            CN,
-            USA,
-            JP,
-            UK
+        CN,
+        USA,
+        JP,
+        UK
 
-        }
+    }
 
 
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public Country From { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public Country From { get; set; }
 
-        public override string ToString()
-        {
-            return string.Format("{0}/{1}/{2}", Name, Age, From);
-        }
+    public override string ToString()
+    {
+        return string.Format("{0}/{1}/{2}", Name, Age, From);
+    }
 
-        public static List<User> GetDefaultUser()
-        {
-            return new List<User>
+    public static List<User> GetDefaultUser()
+    {
+        return new List<User>
             {
                 new User { Name="A",Age=15,From = Country.CN},
                 new User { Name="B",Age=16,From = Country.USA},
@@ -171,25 +294,24 @@ namespace MyUnderstandingCSharp._01_First._04_Four
                 new User { Name="H",Age=22,From = Country.CN},
             };
 
-        }
     }
+}
 
-    public static class Extensions
+public static class Extensions
+{
+    public static Dummy<T> Where<T>(this Dummy<T> dummy
+        , Func<T, bool> predicate)
     {
-        public static Dummy<T> Where<T>(this Dummy<T> dummy
-            , Func<T, bool> predicate)
-        {
-            Console.WriteLine("Where called");
-            return dummy;
-        }
+        Console.WriteLine("Where called");
+        return dummy;
     }
+}
 
-    public class Dummy<T>
+public class Dummy<T>
+{
+    public Dummy<U> Select<U>(Func<T, U> selector)
     {
-        public Dummy<U> Select<U>(Func<T, U> selector)
-        {
-            Console.WriteLine("Select called");
-            return new Dummy<U>();
-        }
+        Console.WriteLine("Select called");
+        return new Dummy<U>();
     }
 }
