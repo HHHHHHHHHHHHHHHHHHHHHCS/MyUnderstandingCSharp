@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -243,7 +244,7 @@ namespace MyUnderstandingCSharp._01_First._04_Four
                            join table2 in list2
                            on table1.Key equals table2.Key
                            into newTable
-                           select new {age = table1.Value,table= newTable };
+                           select new { age = table1.Value, table = newTable };
             newList1.ToList().ForEach(p =>
             {
                 Console.WriteLine(p.age);
@@ -252,6 +253,71 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             Console.WriteLine("-------------------");
 
 
+        }
+
+        public void Test14()
+        {
+            List<KeyValuePair<string, int>> list1 = new List<KeyValuePair<string, int>>
+            {
+                new KeyValuePair<string, int>("aaaa",16),
+                new KeyValuePair<string, int>("bbbb",17),
+                new KeyValuePair<string, int>("cccc",18),
+                new KeyValuePair<string, int>("dddd",19),
+                new KeyValuePair<string, int>("eeee",20),
+            };
+            List<KeyValuePair<string, bool>> list2 = new List<KeyValuePair<string, bool>>
+            {
+                new KeyValuePair<string, bool>("a",true),
+                new KeyValuePair<string, bool>("b",false),
+                new KeyValuePair<string, bool>("c",true),
+                new KeyValuePair<string, bool>("d",false),
+                new KeyValuePair<string, bool>("e",true),
+            };
+
+            var newList1 = from table1 in list1
+                           from table2 in list2
+                           select new { table1, table2 };
+            newList1.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test15()
+        {
+            var newList1 = from left in Enumerable.Range(1, 4)
+                           from right in Enumerable.Range(11, left)
+                           select new { left, right };
+            newList1.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+
+            var list2 = Enumerable.Range(1, 4).SelectMany(left => Enumerable.Range(1, left)
+            , (left, right) => new { left = left, right = right });
+            list2.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test16()
+        {
+            string logDir = "";
+            var query = from file in Directory.GetFiles(logDir, "*.log")
+                        from line in ReadLines(file)
+                        let entry = new LogEntry(line)
+                        where entry.type == LogEntry.LogType.Error
+                        select entry;
+            query.ToList().ForEach(p => Console.WriteLine(p));
+            Console.WriteLine("-------------------");
+        }
+
+        private string[] ReadLines(string fileName)
+        {
+            string[] strs = new string[0];
+            var fs = File.OpenRead(fileName);
+            var sr = new StreamReader(fs);
+            strs[0] = sr.ReadLine();
+            sr.Close();
+            sr.Dispose();
+            fs.Close();
+            fs.Dispose();
+            return strs;
         }
     }
 
@@ -314,4 +380,23 @@ public class Dummy<T>
         Console.WriteLine("Select called");
         return new Dummy<U>();
     }
+}
+
+public class LogEntry
+{
+    public enum LogType
+    {
+        Error,
+        Warning,
+        Log,
+    }
+
+
+    public LogType type;
+
+    public LogEntry(string str)
+    {
+        type = LogType.Error;
+    }
+
 }
