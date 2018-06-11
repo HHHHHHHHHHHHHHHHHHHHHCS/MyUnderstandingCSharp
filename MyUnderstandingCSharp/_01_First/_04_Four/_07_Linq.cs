@@ -307,6 +307,36 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             Console.WriteLine("-------------------");
         }
 
+        public void Test17()
+        {
+            var list = from right in Enumerable.Range(1, 5)
+                       from left in Enumerable.Range(right, 5)
+                       let x =new { right,left}
+                       group x by x.left;
+            list.ToList().ForEach(p => {
+                p.ToList().ForEach(x=>Console.WriteLine(x));
+                Console.WriteLine("================");
+            });
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test18()
+        {
+            var list = from right in Enumerable.Range(1, 5)
+                       from left in Enumerable.Range(right, 5)
+                       let x = new { right, left }
+                       select x;
+            var query= list.GroupBy(x => x.right);
+            query.ToList().ForEach(x => {
+                x.ToList().ForEach(p =>
+                {
+                    Console.WriteLine(p);
+                });
+                Console.WriteLine("============");
+            });
+            Console.WriteLine("-------------------");
+        }
+
         private string[] ReadLines(string fileName)
         {
             string[] strs = new string[0];
