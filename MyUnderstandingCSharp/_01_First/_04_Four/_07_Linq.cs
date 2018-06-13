@@ -337,6 +337,85 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             Console.WriteLine("-------------------");
         }
 
+        public void Test19()
+        {
+            var list = Enumerable.Range(1, 10);
+            var newList = list.Where((item, index) => index % 2 == 0)
+            .Select(x => x * x);
+            newList.ToList().ForEach(x=>Console.WriteLine(x));
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test20()
+        {
+            var userList = User.GetDefaultUser();
+            //最麻烦的
+            var list1 = from user in userList
+                        where user.Age >= 18
+                        select user;
+
+            var list2 = userList.Where(x => x.Age >= 18);
+
+
+            //最麻烦的
+            var list3 = (from user in userList
+                        where user.Age >= 18
+                        select user.Name).ToList();
+
+            var list4 = userList.Where(x => x.Age >= 18)
+                .Select(x => x.Name)
+                .ToList();
+
+            Console.WriteLine("-------------------");
+        }
+
+
+
+        public void Test21()
+        {
+            List<KeyValuePair<string, string>> list1 = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("aaaa","a"),
+                new KeyValuePair<string, string>("bbbb","bb"),
+                new KeyValuePair<string, string>("cccc","ccc"),
+                new KeyValuePair<string, string>("dddd","dddd"),
+                new KeyValuePair<string, string>("eeee","eeeee"),
+            };
+            List<KeyValuePair<string, bool>> list2 = new List<KeyValuePair<string, bool>>
+            {
+                new KeyValuePair<string, bool>("aaaa",true),
+                new KeyValuePair<string, bool>("bbbb",false),
+                new KeyValuePair<string, bool>("cccc",true),
+                new KeyValuePair<string, bool>("dddd",false),
+                new KeyValuePair<string, bool>("eeee",true),
+            };
+
+            var newList = list1.Join(list2, x => x.Key, y => y.Key, (x, y) => new { x.Key, x.Value,bo= y.Value });
+            newList.ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-------------------");
+        }
+
+        public void Test22()
+        {
+            List<KeyValuePair<int, int>> list1 = new List<KeyValuePair<int, int>>();
+            for(int i=-5;i<=10;i++)
+            {
+                list1.Add(new KeyValuePair<int, int>(i, i * i));
+            }
+
+            var query1 = from item in list1
+                         orderby item.Value descending, item.Key ascending
+                         select item;
+
+            query1.ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("===============================");
+
+            var query2 = list1.OrderByDescending(x => x.Value)
+                .ThenBy(x => x.Key);
+            query2.ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-------------------");
+        }
+
         private string[] ReadLines(string fileName)
         {
             string[] strs = new string[0];

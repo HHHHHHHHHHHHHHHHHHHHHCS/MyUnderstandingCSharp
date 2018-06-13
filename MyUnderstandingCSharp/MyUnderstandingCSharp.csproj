@@ -70,6 +70,7 @@
     <Compile Include="_01_First\_03_Three\_06_IEnumerator.cs" />
     <Compile Include="_01_First\_03_Three\_07_Partial.cs" />
     <Compile Include="_01_First\_03_Three\_09_Namespace.cs" />
+    <Compile Include="_01_First\_04_Four\_08_SampleCode.cs" />
     <Compile Include="_01_First\_04_Four\_01_GetSet.cs" />
     <Compile Include="_01_First\_04_Four\_02_GetSetSturct.cs" />
     <Compile Include="_01_First\_04_Four\_03_SimpleInit.cs" />
