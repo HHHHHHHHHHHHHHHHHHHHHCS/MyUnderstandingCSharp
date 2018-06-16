@@ -11,8 +11,8 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            _08_SampleCode t = new _08_SampleCode();
-            t.Test03();
+            //_09_Async t = new _09_Async();
+            _09_Async.PrintPage();
 
             while (true)
             {

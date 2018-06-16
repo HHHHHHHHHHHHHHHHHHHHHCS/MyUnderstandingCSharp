@@ -78,6 +78,7 @@
     <Compile Include="_01_First\_04_Four\_05_Lambda.cs" />
     <Compile Include="_01_First\_04_Four\_06_ExtendMethod.cs" />
     <Compile Include="_01_First\_04_Four\_07_Linq.cs" />
+    <Compile Include="_01_First\_04_Four\_09_Async.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
