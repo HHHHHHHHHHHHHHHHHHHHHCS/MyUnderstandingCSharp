@@ -59,5 +59,20 @@ namespace MyUnderstandingCSharp._01_First._04_Four
             Task<string> stringTask = GetPageStringAsync("http://www.baidu.com/");
             Console.WriteLine(stringTask.Result);
         }
+
+        public static async Task<int> SumCharacterAsync(IEnumerable<char>  text)
+        {
+            int total = 0;
+            foreach(var ch in text)
+            {
+                int unicode = ch;
+                await Task.Delay(unicode);
+                Console.WriteLine(unicode);
+                total += unicode;
+            }
+            await Task.Yield();
+            Console.WriteLine(total);
+            return total;
+        }
     }
 }

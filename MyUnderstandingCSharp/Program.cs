@@ -12,7 +12,7 @@ namespace MyUnderstandingCSharp
         static void Main(string[] args)
         {
             //_09_Async t = new _09_Async();
-            _09_Async.AsyncResult();
+            _09_Async.SumCharacterAsync("abcdefg");
 
             while (true)
             {
