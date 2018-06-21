@@ -80,6 +80,7 @@
     <Compile Include="_01_First\_04_Four\_06_ExtendMethod.cs" />
     <Compile Include="_01_First\_04_Four\_07_Linq.cs" />
     <Compile Include="_01_First\_04_Four\_09_Async.cs" />
+    <Compile Include="_01_First\_05_Five\_01_LinqOther.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

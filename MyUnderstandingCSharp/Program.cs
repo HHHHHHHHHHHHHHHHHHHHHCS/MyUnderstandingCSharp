@@ -3,6 +3,7 @@
 using MyUnderstandingCSharp._01_First._02_Two;
 using MyUnderstandingCSharp._01_First._03_Three;
 using MyUnderstandingCSharp._01_First._04_Four;
+using MyUnderstandingCSharp._01_First._05_Five;
 using System;
 
 namespace MyUnderstandingCSharp
@@ -11,8 +12,8 @@ namespace MyUnderstandingCSharp
     {
         static void Main(string[] args)
         {
-            //_09_Async t = new _09_Async();
-            _09_Async.SumCharacterAsync("abcdefg");
+            _01_LinqOther t = new _01_LinqOther();
+            t.Test02();
 
             while (true)
             {
