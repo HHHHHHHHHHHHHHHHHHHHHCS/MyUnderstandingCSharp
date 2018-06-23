@@ -13,7 +13,7 @@ namespace MyUnderstandingCSharp
         static void Main(string[] args)
         {
             _01_LinqOther t = new _01_LinqOther();
-            t.Test02();
+            t.Test04();
 
             while (true)
             {

@@ -29,5 +29,61 @@ namespace MyUnderstandingCSharp._01_First._05_Five
             numbers = numbers.Concat(new[] { 1, 2, 3, 4, 5 }).ToList();
             numbers.ForEach(x => Console.WriteLine(x));
         }
+
+        public void Test03()
+        {
+            object[] stringArray = { "a", "b", "c", "d", "e" };
+            object[] objectArray = { "a", 'b', 3, 4f, 5d,6m,0x22,false,"dddd" };
+
+            Console.WriteLine("stringArray.Cast<string>()");
+            foreach(var item in  stringArray.Cast<string>())
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("stringArray.OfType<string>()");
+            foreach (var item in stringArray.OfType<string>())
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("objectArray.Cast<string>()");
+            try
+            {
+                foreach (var item in objectArray.Cast<string>())
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            Console.WriteLine("objectArray.OfType<string>()");
+            foreach (var item in objectArray.OfType<string>())
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        public void Test04()
+        {
+            string[] stringArray = { "aa", "ab", "ac", "bb", "bc","d","e" };
+
+            Console.WriteLine("ToList");
+            stringArray.ToList().ForEach(x=>Console.WriteLine(x));
+            Console.WriteLine("ToDictionary");
+            foreach (var item in stringArray.ToDictionary(x => x))
+            {
+                Console.WriteLine("Key{0}  Value:{1}", item.Key, item.Value);
+            }
+            Console.WriteLine("ToList");
+            foreach (var item in stringArray.ToLookup(x => x[0]))
+            {
+                Console.WriteLine("------------{0}--------------", item.Key);
+                foreach (var info in item)
+                {
+                    Console.WriteLine(info);
+                }
+            }
+        }
     }
 }
