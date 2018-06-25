@@ -191,5 +191,43 @@ namespace MyUnderstandingCSharp._01_First._05_Five
             Console.WriteLine("-----SkipWhile-----");
             intArray.SkipWhile(x => x <4).ToList().ForEach(x => Console.WriteLine(x));
         }
+
+        public void Test10()
+        {
+            string[] words = { "aaa", "bbbb", "ccccc", "dddddd" };
+            Console.WriteLine("-----Select-----");
+            words.Select(word => word.Length).ToList().ForEach(x=>Console.WriteLine(x));
+
+            Console.WriteLine("-----Select Index-----");
+            words.Select((word,index) => word.Length+"///"+index).ToList().ForEach(x => Console.WriteLine(x));
+
+            Console.WriteLine("-----Select Many-----");
+            words.SelectMany((word) => word.ToCharArray()).ToList().ForEach(x => Console.WriteLine(x));
+
+            Console.WriteLine("-----Select Many-----");
+            words.SelectMany((word,index) => 
+            {
+                return Enumerable.Repeat(word,index);
+            })
+            .ToList().ForEach(x =>
+            {
+
+                foreach (var ch in x) { Console.Write("{0},", ch); };
+                Console.WriteLine();
+            });
+
+        }
+
+        public void Test11()
+        {
+            string[] names = new string[] { "Aa", "Bb", "Cc", "Dd", "Ee", "Aa", "Bb", "Cc", "Dd", "Ee" };
+            string[] colors = new string[] { "ARed", "ABule", "BYellow", "BRed", "CBule","DRed" };
+
+            names.Zip(colors, (x, y) => x + "///" + y).ToList<string>()
+                .ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("--------------");
+            names.Zip(colors.Take(3), (x, y) => x + "///" + y).ToList<string>()
+                .ForEach(x => Console.WriteLine(x));
+        }
     }
 }
