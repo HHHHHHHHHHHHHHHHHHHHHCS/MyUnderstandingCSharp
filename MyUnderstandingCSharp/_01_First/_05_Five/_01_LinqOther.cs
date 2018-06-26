@@ -229,5 +229,45 @@ namespace MyUnderstandingCSharp._01_First._05_Five
             names.Zip(colors.Take(3), (x, y) => x + "///" + y).ToList<string>()
                 .ForEach(x => Console.WriteLine(x));
         }
+
+        public void Test12()
+        {
+            string[] names = new string[] { "Aa", "Bb", "Cc", "Dd", "Ee", "Aa", "Bb", "Cc", "Dd", "Ee" };
+            string[] colors = new string[] { "ARed", "ABule", "BYellow", "BRed", "CBule", "DRed" };
+
+            Console.WriteLine( names.All(x => x[0] == 'A'));
+            Console.WriteLine(names.All(x => x.Length>1));
+            Console.WriteLine(colors.Any(x => x[0] == 'Z'));
+            Console.WriteLine(colors.Any(x => x== "ARed"));
+            Console.WriteLine(colors.Contains("ARed"));
+            Console.WriteLine(colors.Contains("ARED",StringComparer.OrdinalIgnoreCase));
+        }
+
+        public void Test13()
+        {
+            string[] names = new string[] { "Aa", "Bb", "Cc", "Dd", "Ee", "Aa", "Bb", "Cc", "Dd", "Ee" };
+            string[] colors = new string[] { "ARed", "ABule", "BYellow", "BRed", "CBule", "DRed" };
+
+            names.Where(x => x[0] == 'A').ToList().ForEach(x=>Console.WriteLine(x));
+            Console.WriteLine("-------------");
+            colors.Where((x,index) => x.Length<=5&&index<3).ToList().ForEach(x => Console.WriteLine(x));
+        }
+
+        public void Test14()
+        {
+            char[] chs1 = { 'a', 'b', 'c', 'd', 'e','a','b' ,'c'};
+            char[] chs2 = { 'd', 'e', 'f', 'g', 'h' };
+
+            Console.WriteLine("-----Distinct-----");
+            chs1.Distinct().ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-----Intersect-----");
+            chs1.Intersect(chs2).ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-----Union-----");
+            chs1.Union(chs2).ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-----Except-----");
+            chs1.Except(chs2).ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-----Except-----");
+            chs2.Except(chs1).ToList().ForEach(x => Console.WriteLine(x));
+        }
     }
 }
