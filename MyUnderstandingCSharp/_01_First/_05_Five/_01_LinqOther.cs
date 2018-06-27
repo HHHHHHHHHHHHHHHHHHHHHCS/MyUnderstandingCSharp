@@ -62,6 +62,12 @@ namespace MyUnderstandingCSharp._01_First._05_Five
             {
                 Console.WriteLine(item);
             }
+
+            Console.WriteLine("objectArray.OfType<string>()");
+            foreach (var item in stringArray.ToList().ConvertAll<string>(x=>(string)x))
+            {
+                Console.WriteLine(item.GetType()+"///"+ item);
+            }
         }
 
         public void Test04()
@@ -268,6 +274,25 @@ namespace MyUnderstandingCSharp._01_First._05_Five
             chs1.Except(chs2).ToList().ForEach(x => Console.WriteLine(x));
             Console.WriteLine("-----Except-----");
             chs2.Except(chs1).ToList().ForEach(x => Console.WriteLine(x));
+        }
+
+        public void Test15()
+        {
+            char[] chs1 = { 'a', 'b', 'c', 'd', 'e', 'a', 'b', 'c' };
+            string[] str1 = { "f1", "e2", "d3", "c4", "b5", "a6", };
+            string[] str2 = { "ee", "d","eee","aaa","aaaa","aa","bb","bbb","b","ccc","cc"};
+
+            Console.WriteLine("-----OrderBy-----");
+            chs1.OrderBy(x => x).ToList().ForEach(x=>Console.WriteLine(x));
+            Console.WriteLine("-----OrderByDescending-----");
+            str1.OrderByDescending(x => x[1]).ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-----ThenByDescending-----");
+            str2.OrderBy(x => x[0])
+                .ThenByDescending(x=>x.Length)
+                .ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("-----Reverse-----");
+            chs1.Reverse().ToList().ForEach(x => Console.WriteLine(x));
+
         }
     }
 }

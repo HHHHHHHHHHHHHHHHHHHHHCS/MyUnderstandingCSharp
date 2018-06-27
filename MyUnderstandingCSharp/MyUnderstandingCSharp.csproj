@@ -81,6 +81,7 @@
     <Compile Include="_01_First\_04_Four\_07_Linq.cs" />
     <Compile Include="_01_First\_04_Four\_09_Async.cs" />
     <Compile Include="_01_First\_05_Five\_01_LinqOther.cs" />
+    <Compile Include="_01_First\_05_Five\_02_T.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
