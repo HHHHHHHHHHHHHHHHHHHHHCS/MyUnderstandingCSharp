@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyUnderstandingCSharp._01_First._03_Three
 {
-    public class _03__NullableValue
+    public class _03_NullableValue
     {
         static void Display(int? x)
         {
