@@ -62,10 +62,10 @@
     <Compile Include="_01_First\_02_Two\_07_QuestionMark.cs" />
     <Compile Include="_01_First\_02_Two\_08_PairOfT.cs" />
     <Compile Include="_01_First\_02_Two\_09_StaticClass.cs" />
+    <Compile Include="_01_First\_03_Three\_03_NullableValue.cs" />
     <Compile Include="_01_First\_03_Three\_08_SealedStaticClass.cs" />
     <Compile Include="_01_First\_03_Three\_01_CountingEnumer.cs" />
     <Compile Include="_01_First\_03_Three\_02_Type.cs" />
-    <Compile Include="_01_First\_03_Three\_03_ NullableValue.cs" />
     <Compile Include="_01_First\_03_Three\_04_NullPerson.cs" />
     <Compile Include="_01_First\_03_Three\_05_AnonymousDelegate.cs" />
     <Compile Include="_01_First\_03_Three\_06_IEnumerator.cs" />
